@@ -1,20 +1,23 @@
 import { useState, FormEvent, ChangeEvent } from "react";
 import Auth from "../utils/auth";
 import { login } from "../api/authAPI";
+import { useNavigate } from "react-router-dom";
 import { UserLogin } from "../interfaces/UserLogin";
 import LightThemeLogo from "../assets/LightThemeLogo.png";
 import "../styles/login.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Login = () => {
+  // State variable to manage Login form data
   const [loginData, setLoginData] = useState<UserLogin>({
     username: "",
     password: "",
   });
 
-  // State for error messages
+  // State variable for error messages
   const [errorMsg, setErrorMsg] = useState<string>("");
 
+  // Handle changes in the input fields
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -25,11 +28,15 @@ const Login = () => {
     });
   };
 
+  // useNavigate function to direct users to Movies page after successful sign up
+  const navigate = useNavigate();
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
       const data = await login(loginData);
       Auth.login(data.token);
+      navigate("/Movies");
     } catch (err) {
       console.error("Failed to login", err);
       setErrorMsg(err instanceof Error ? err.message : String(err));
@@ -45,8 +52,8 @@ const Login = () => {
         width="172"
         height="172"
       />
-
       <form onSubmit={handleSubmit}>
+        {/* Username Field */}
         <div className="form-floating">
           <input
             type="text"
@@ -58,6 +65,7 @@ const Login = () => {
           />
           <label htmlFor="floatingInput">Username</label>
         </div>
+        {/* Password Field */}
         <div className="form-floating">
           <input
             type="password"
@@ -69,7 +77,6 @@ const Login = () => {
           />
           <label htmlFor="floatingPassword">Password</label>
         </div>
-
         <button className="btn btn-primary w-100 py-2" type="submit">
           Sign in
         </button>
