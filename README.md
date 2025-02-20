@@ -96,8 +96,10 @@ npm install
 
 GitHub Repository: [CineTracker](https://github.com/AdiPatel095/CineTracker)
 
-Deployed Application: [Render Link]()
+Deployed Application: [Render Link](https://cinetracker-vlws.onrender.com/)
 
 TMDb API Documentation: [TMDb API](https://developer.themoviedb.org/reference/intro/getting-started)
 
 OMDb API Documentation: [OMDb API](https://www.omdbapi.com/)
+
+Google Cloud Services: [YouTube API](https://cloud.google.com/)
