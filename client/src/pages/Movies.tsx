@@ -30,7 +30,6 @@ const Movies = () => {
   useEffect(() => {
     getPosters(reqData)
       .then((data) => {
-        console.log(data);
         setCards(data);
       })
       .catch((err) => {

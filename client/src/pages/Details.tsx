@@ -8,13 +8,12 @@ import { CardDetails } from '../interfaces/CardDetails';
 const Jumbotron: React.FC<{ id: number }> = ({ id }) => {
   
   const poster_url = "https://image.tmdb.org/t/p/w500";
-  const [hasInteracted, setHasInteracted] = useState(false);
   const [cardDetails, setDetails] = useState<CardDetails>({});
 
   useEffect(() => {
-    getDetails({ MovieID: id })
+    getDetails({ MovieID : id })
       .then((data) => {
-        console.log(data);
+        console.log(data+"data");
         setDetails(data);
       })
       .catch((err) => {
@@ -22,33 +21,6 @@ const Jumbotron: React.FC<{ id: number }> = ({ id }) => {
       });
   }, [id]);
 
-  // Event listener to detect user interaction with the iframe
-  useEffect(() => {
-    const iframe = document.querySelector('iframe');
-    console.log(getDetails({ MovieID: 1 }));
-
-    if (iframe) {
-      iframe.addEventListener('click', () => {
-        setHasInteracted(true); // Set to true when the iframe is clicked
-      });
-    }
-
-    // Handle the page unload event
-    const handleBeforeUnload = (event: BeforeUnloadEvent) => {
-      if (hasInteracted) {
-        const message = "You have interacted with the video. Are you sure you want to leave this page?";
-        event.returnValue = message; // Standard for most browsers
-        return message; // For some browsers
-      }
-    };
-
-    window.addEventListener('beforeunload', handleBeforeUnload);
-
-    // Clean up the event listener
-    return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
-    };
-  }, [hasInteracted]);
 
   return (
     <div className="container py-4" style={{ backgroundImage: `url(${poster_url + cardDetails.BackdropLink})` }}>

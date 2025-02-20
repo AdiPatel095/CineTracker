@@ -27,7 +27,24 @@ const getPosters = async (reqData: PosterReqData) => {
         };
         newCardDataArray.push(newCardData);
     });
-    console.log(reqData)
+
+    for (const element of newCardDataArray) {
+        const ytReqBody = {
+            title: element.Title,
+        };
+    
+        const responseYT = await fetch(`/api/details/yt`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(ytReqBody),
+        });
+    
+        const ytData = await responseYT.json();
+        element.Trailer = ytData.videoLink;
+    }
+    console.log(newCardDataArray)
     return newCardDataArray;
 }
 
