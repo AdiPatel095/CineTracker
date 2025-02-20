@@ -3,7 +3,7 @@ import '../styles/details.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { getDetails } from '../api/detailsAPI';
 import { CardDetails } from '../interfaces/CardDetails';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+// import { Container, Row, Col, Button } from 'react-bootstrap';
 
 const Jumbotron: React.FC<{ id: number }> = ({ id }) => {
   
