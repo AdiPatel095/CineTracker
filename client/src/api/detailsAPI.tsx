@@ -38,3 +38,4 @@ const getDetails = async (cardData: CardData) => {
 }
 
 export { getDetails };
+

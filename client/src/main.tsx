@@ -1,7 +1,6 @@
 import './index.css';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
 import App from './App.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
 import Login from './pages/Login.tsx';
@@ -11,7 +10,6 @@ import TVShows from './pages/TVShows.tsx';
 import Library from './pages/Library.tsx';
 import Contact from './pages/Contact.tsx';
 import Details from './pages/Details.tsx';
-
 // Protected Route Component
 import Auth from './utils/auth.ts';
 import { Navigate } from 'react-router-dom';
@@ -19,14 +17,11 @@ const ProtectedRoute = ({ element }: { element: JSX.Element }) => {
   return Auth.loggedIn() ? element : <Navigate to="/Movies" replace />;
 };
 export default ProtectedRoute;
-
 import { useParams } from 'react-router-dom';
-
 const DetailsWrapper = () => {
   const { id } = useParams();
   return <Details id={Number(id)} />;
 };
-
 const router = createBrowserRouter([
   {
     path: '/',
@@ -64,8 +59,15 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-
 const rootElement = document.getElementById('root');
 if (rootElement) {
   ReactDOM.createRoot(rootElement).render(<RouterProvider router={router} />);
 }
+
+
+
+
+
+
+
+

@@ -1,9 +1,11 @@
 /* Background Of the Page */
+/* Global styles */
 html, body {
-  background-color: #F0FFFF;
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: 100%; /* Ensures the body takes the full viewport height */
+  width: 100%; /* Ensures the body takes the full viewport width */
+  overflow-x: hidden; /* Optional: prevents horizontal scrolling */
 }
 
 body {
@@ -43,11 +45,11 @@ body {
   margin-bottom: 20px; 
 }
 
-.logo-image {
-  width: 150px;
-  height: 150px;
+/* .logo-image {
+  width: 30px;
+  height: 30px;
   object-fit: contain;
-}
+} */
 
 /* Button Container Reviews Section */
 .btn-outline-secondary:hover {
@@ -57,22 +59,80 @@ body {
 }
 
 .review-container {
-  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6);  /* Black background with 60% opacity */
+  color: white;                           /* White text color for contrast */
+  padding: 1.5rem;                        /* Padding inside the box */
+  border-radius: 10px;                    /* Rounded corners */
+  display: flex;                          /* Flexbox for internal alignment */
+  flex-direction: column;                 /* Stack elements vertically */
+  justify-content: space-between;         /* Space out the content */
+  height: 100%;                           /* Make sure it takes the full height */
+  width: 90%;                            /* Full width */
+  overflow: hidden;                       /* Ensure no content overflows outside the container */
 }
 
+.review-box {    /* Take up full width of parent */     /* Take up full height of the viewport */
+  display: flex;       /* If you want to organize child elements flexibly */
+  justify-content: center; /* Optional: Centers content horizontally */
+  align-items: center; /* Optional: Centers content vertically */
+}
 
-/* .review-container {
-  background-color: #343a40; 
-  color: white; 
-  padding: 30px;
-  border-radius: 10px;
-  height: 100%; 
+.parent-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
+  justify-content: space-between; /* Spread content horizontally */
+  align-items: flex-end; /* Aligns items at the bottom */
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+  position: relative; /* Allows absolute positioning of child elements */
+}
 
+/* The class for the container with black background and 80% opacity */
+/* Black overlay box styles */
+.black-overlay-box {
+  background-color: rgba(0, 0, 0, 0.6);  /* Black background with 60% opacity */
+  color: white;                           /* White text color for contrast */
+  padding: 2rem;                          /* Padding inside the box */
+  border-radius: 10px;                    /* Rounded corners */
+  display: flex;                          /* Flexbox for internal alignment */
+  flex-direction: column;                 /* Stack elements vertically */
+  justify-content: space-between;         /* Space out the content */
+  height: 60%;                           /* Full height of the parent container */
+  width: 90%;                            /* Full width for the black box */
+  overflow: auto;                         /* Allow scrolling if content overflows */
+}
+
+/* Ensure the right-side container takes full height */
+.right-side {
+  display: flex;
+  flex: 1;                                /* Make sure it takes available space */
+  justify-content: flex-start;            /* Align to the top */
+  height: 100%;                           /* Take full height of the container */
+}
+
+.left-side, .right-side {
+  display: flex;
+  flex: 1;                                /* Ensure both sides take up equal width */
+  justify-content: flex-start;            /* Align to the left for the left side */
+  height: 100%;                           /* Take up full height of parent container */
+}
+
+.review-container {
+  background-color: rgba(0, 0, 0, 0.6);  /* Black background with 60% opacity */
+  color: white;                           /* White text color for contrast */
+  padding: 1.5rem;                        /* Padding inside the box */
+  border-radius: 10px;                    /* Rounded corners */
+  display: flex;                          /* Flexbox for internal alignment */
+  flex-direction: column;                 /* Stack elements vertically */
+  justify-content: space-between;         /* Space out the content */
+  height: 100%;                           /* Take up full height of the container */
+  width: 100%;                            /* Full width */
+}
+
+.button-spacing {
+  margin-right: 10px;  /* Adjust the space as needed */
+}
+
+/* Review italic text */
 .italic-text {
   font-style: italic;
   margin-bottom: 20px;
