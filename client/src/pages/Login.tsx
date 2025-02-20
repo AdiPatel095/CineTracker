@@ -89,7 +89,13 @@ const Login = () => {
       )}
       <p className="mt-5 mb-3 text-body-secondary">© 2025 CineTracker, Inc</p>
       <hr />
+      {/* Sign Up Page Link */}
       <h3 className="container text-center mt-5">Don't have an account?</h3>
+      <div className="text-center">
+        <button className="btn btn-secondary mt-3" onClick={() => navigate("/SignUp")}>
+          Sign up
+        </button>
+      </div>
     </div>
   );
 };
