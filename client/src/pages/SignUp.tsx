@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Auth from '../utils/auth';
 import { signUp } from "../api/authAPI";
 import { UserSignUp } from "../interfaces/UserSignUp";
+import LightThemeLogo from "../assets/LightThemeLogo.png";
 
 const SignUp = () => {
   // State variable to manage Sign Up form data
@@ -42,6 +43,13 @@ const SignUp = () => {
 
   return (
     <div className="form-container">
+      <img
+        className="mb-4"
+        src={LightThemeLogo}
+        alt="Light theme logo"
+        width="172"
+        height="172"
+      />
       <form className="form sign-up-form" onSubmit={handleSubmit}>
         <h1>Sign Up</h1>
         {/* Username Field */}
