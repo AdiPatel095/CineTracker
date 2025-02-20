@@ -5,7 +5,6 @@ import { getDetails } from '../api/detailsAPI';
 import { CardDetails } from '../interfaces/CardDetails';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
-
 const Jumbotron: React.FC<{ id: number }> = ({ id }) => {
   
   const poster_url = "https://image.tmdb.org/t/p/original";
