@@ -11,12 +11,11 @@ export const login = async (req: Request, res: Response) => {
   // Extract username and password from request body
   const { username, password } = req.body;
   console.log(req.body);
-  console.log(username, password);// Create a new User model instance
+  console.log(username, password);
 
   try {
     // Find user in the database by username
     const user = await User.findOne({ where: { username } });
-
 
     // If user is not found, send response
     if (!user) {
@@ -25,7 +24,8 @@ export const login = async (req: Request, res: Response) => {
 
     // Compare provided password with the stored hashed password
     const passwordIsValid = await bcrypt.compare(password, user.password);
-    if (!passwordIsValid) { // If invalid, send response
+    if (!passwordIsValid) {
+      // If invalid, send response
       return res.status(401).json({ message: 'Invalid password' });
     }
 
@@ -34,14 +34,15 @@ export const login = async (req: Request, res: Response) => {
     // Generate JWT token for the authenticated user
     const token = jwt.sign({ username }, secretKey, { expiresIn: '1d' });
 
-    return res.json({ token });
+    // Return the token and the user's ID
+    return res.json({ token, userID: user.id });
   } catch (error) {
     console.error("Error during login:", error);
     return res.status(500).json({ message: 'Internal server error during login' });
   }
 };
 
-// signUp function to authenticate a user
+// signUp function to register a new user
 export const signUp = async (req: Request, res: Response) => {
   try {
     // Extract username, email and password from request body
@@ -58,13 +59,13 @@ export const signUp = async (req: Request, res: Response) => {
     // Generate JWT token for the authenticated user
     const token = jwt.sign({ username: newUser.username }, secretKey, { expiresIn: '1d' });
 
-    res.json({ token }); // Send the token as a JSON response
-    // res.status(201).json(newUser);
+    // Return the token and the newly created user's ID
+    res.json({ token, userID: newUser.id });
   } catch (error: any) {
     console.error("Error during signup:", error);
     res.status(400).json({ message: 'User could not be created' });
   }
-}
+};
 
 // POST /login - Login a user
 router.post('/login', login);

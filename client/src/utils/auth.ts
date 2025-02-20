@@ -2,8 +2,15 @@ import { type JwtPayload, jwtDecode } from 'jwt-decode';
 
 class AuthService {
   login(idToken: string) {
-    localStorage.setItem('id_token', idToken);
+    const payload = JSON.parse(idToken);
+    localStorage.setItem('id_token', payload.token);
+    localStorage.setItem('user_id', payload.userID);
     window.location.assign('/Movies');
+  }
+
+  getUserID(): string {
+    const userID = localStorage.getItem('user_id') || '';
+    return userID;
   }
 
   getToken(): string {

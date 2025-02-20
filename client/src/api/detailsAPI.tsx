@@ -19,8 +19,6 @@ const getDetails = async (cardData: CardData) => {
     detailsData.Overview = data.overview;
     const date = new Date(data.release_date);
     detailsData.Year = date.getFullYear().toString();
-
-    console.log(detailsData);
     const ytReqBody = {
         title: detailsData.Title,
     };

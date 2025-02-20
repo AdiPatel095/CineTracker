@@ -25,7 +25,7 @@ div.gilmer {
 }
 
 div.adi {
-    background-image: url('../../public/Adi-Patel.jpg');
+    background-image: url('../../Adi-Patel.jpg');
     background-size: cover;
     background-position: center;
     height: 250px !important;
@@ -33,7 +33,7 @@ div.adi {
 }
 
 div.freddy {
-    background-image: url('../../public/Freddy-Laboy.JPG');
+    background-image: url('../../Freddy-Laboy.JPG');
     background-size: cover;
     background-position: center;
     height: 250px !important;

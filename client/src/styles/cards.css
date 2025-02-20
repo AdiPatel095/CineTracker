@@ -47,8 +47,8 @@ div.d-flex.flex-column.h-100.p-5.pb-3.text-white.text-shadow-1 {
 /* Add this to your 'cards-movie.css' file */
 .movie-card {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    height: 275px!important;
-    width: 200px!important; 
+    height: 575px!important;
+    width: 400px!important; 
   }
   
   .movie-card:active {

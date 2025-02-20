@@ -56,7 +56,7 @@ const YearDropdown: React.FC<YearDropdownProps> = ({ onYearChange }) => {
       {/* Show button view if not editing */}
       {!editing ? (
         <button
-          className="btn btn-secondary btn-sm dropdown-toggle"
+          className="btn btn-secondary btn-sm dropdown-toggle dropdown-button"
           type="button"
           onClick={handleButtonClick}
         >

@@ -26,7 +26,7 @@ function App() {
   return (
     <div className={`page-container ${theme === 'dark' ? 'dark' : ''}`}>
       <Header />
-      <main className="container pt-5">
+      <main className="app-container container pt-5">
         <Outlet />
       </main>
       <Footer toggleTheme={toggleTheme} theme={theme} />

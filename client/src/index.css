@@ -66,10 +66,33 @@ html {
   padding: 0;
 }
 
+.dropdown-container{
+  padding-bottom: 100px;
+}
+
+.dropdown-button{
+  height: 2.5rem;
+  font-size: large!important;
+}
+
+.nonwide-container{
+  margin: 0 10rem !important;
+}
+
+.app-container{
+  max-width: 100% !important;
+}
+
 .card-parent-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  grid-gap: 1rem;
+}
+
+.lib-card-parent-container{
+  display: flex;
+  flex-wrap: wrap;
   grid-gap: 1rem;
 }
 

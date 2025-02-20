@@ -74,7 +74,7 @@ const GenreDropdown: React.FC<GenreDropdownProps> = ({ onGenreChange, type }) =>
   return (
     <div className="dropdown">
       <button
-        className="btn btn-secondary dropdown-toggle"
+        className="btn btn-secondary dropdown-toggle dropdown-button"
         type="button"
         data-bs-toggle="dropdown"
         aria-expanded="false"

@@ -5,9 +5,11 @@ const router = express.Router();
 export const movieFetch = async (req: Request, res: Response) => {
     const api_key = process.env.TMDB_API_KEY;
     const { Year: year = "", Genre: genre = "" } = req.body;
+    //create a random number for the page
+    const page: number = Math.floor(Math.random() * 50) + 1;
   
     // Base URL and fixed end parameters
-    const baseUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=en-US`;
+    const baseUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=en-US&page=${page}`;
     const sortParam = `&sort_by=popularity.desc`;
   
     // Build additional query parameters based on provided values
@@ -31,8 +33,11 @@ export const tvFetch = async (req: Request, res: Response) => {
     const api_key = process.env.TMDB_API_KEY;
   const { Year: year = "", Genre: genre = "" } = req.body;
 
+  //create a random number for the page
+  const page: number = Math.floor(Math.random() * 50) + 1;
+
   // Base URL and fixed end parameters
-  const baseUrl = `https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&language=en-US&page=10`;
+  const baseUrl = `https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&language=en-US&page=${page}`;
   const sortParam = `&sort_by=popularity.desc`;
 
   // Build additional query parameters based on provided values

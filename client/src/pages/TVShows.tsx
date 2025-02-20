@@ -38,7 +38,7 @@ const TVShows = () => {
   }, [reqData]);
 
   return (
-    <>
+    <div className="nonwide-container">
       <YearDropdown onYearChange={handleYearChange}/>
       <GenreDropdown onGenreChange={handleGenreChange} type={reqData.Type as "movie" | "tv"}/>
       <div className="card-parent-container">
@@ -46,7 +46,7 @@ const TVShows = () => {
                   <CardSection {...card} key={index}/>
                 ))}
       </div>
-    </>
+    </div>
   );
 };
 
