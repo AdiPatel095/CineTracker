@@ -33,7 +33,7 @@ To start the application, run the following commands:
 
 The following animation shows the web application's appearance and functionality:
 
-![Screenshot]()
+![Screenshot](./client/public/SCwebsite.jpg)
 
 ## Instructions
 
@@ -94,9 +94,9 @@ npm install
 
 ## Additional Resources
 
-GitHub Repository: [CineTracker](https://github.com/AdiPatel095/CineTracker)
+GitHub Repository: [CineTracker]([https://github.com/AdiPatel095/CineTracker](https://github.com/gilmerperez/cinetracker?tab=readme-ov-file))
 
-Deployed Application: [Render Link]()
+Deployed Application: [Render Link](https://cinetracker-vlws.onrender.com/)
 
 TMDb API Documentation: [TMDb API](https://developer.themoviedb.org/reference/intro/getting-started)
 
