@@ -1,22 +1,27 @@
-# CineTracker
+# CineTracker - Movie App
+![License](https://img.shields.io/badge/license-MIT-blue)
 
-CineTracker is a full-stack web application designed for movie and TV show enthusiasts who want to keep track of what they’ve watched and what they plan to watch. The platform allows users to search for movies and TV shows using the OMDb API, add titles to their personal library, and categorize them based on viewing status.
+## Description
+CineTracker is a full-stack web application designed for movie and TV show enthusiasts who want to track what they’ve watched and plan to watch. The platform allows users to search for movies and TV shows using the OMDb API, add titles to their personal library, and categorize them based on viewing status.
 
-The goal of CineTracker is to provide an interactive and user-friendly experience for managing entertainment choices while implementing authentication to ensure personalized libraries for each user. Built using the PERN stack (PostgreSQL, Express, React, Node.js), the application features a robust back-end with secure authentication using JWT, a dynamic front-end with React, and a Sequelize ORM database integration for persistent storage.
+The goal of CineTracker is to offer an interactive and user-friendly experience for managing entertainment choices, with authentication ensuring personalized libraries for each user. Built using the PERN stack (PostgreSQL, Express, React, Node.js), the application features a robust back-end with secure JWT authentication, a dynamic React front-end, and Sequelize ORM integration for persistent storage.
 
 ## Table of Contents
-
+- [Installation](#installation)
 - [Usage](#usage)
-- [Mock Up](#mock-up)
-- [Instructions](#instructions)
+- [Mock-Up](#mock-up)
+- [Deployed URL](#deployed-url)
+- [License](#license)
 - [Key Features](#key-features)
 - [Technology Stack](#technology-stack)
-- [Additional Resources](#additional-resources)
+- [Contributing](#contributing)
+- [The Software Developers](#the-software-developers)
+- [Questions](#questions)
 
-## Usage
+## Installation
+This is a deployed website that does not require any installation to be viewed by a user.
 
-To start the application, run the following commands:
-
+For Developers, to start the application, run the following commands:
 1. Install dependencies:
   ```
   npm install
@@ -29,38 +34,33 @@ To start the application, run the following commands:
   npm run start:dev
   ```
 
+## Usage
+Once you open the website, on the Home page (Movies), click the YEAR tab to search for movies by year, and the GENRE tab to search by genre. The TV SHOWS page works the same way as the MOVIE page.
+
+Once you find a movie or TV show you like, click on it to be redirected to the DETAILS page, where you can add it to your Watchlist or mark it as ALREADY WATCHED so you don’t have to watch it again. All saved movies and TV shows can be viewed on the LIBRARY page.
+
+The final page is the CONTACT US page, where you can see all the developers who built this amazing app.
+
 ## Mock-Up
+The following images show the web application's appearance and functionality:
 
-The following animation shows the web application's appearance and functionality:
+<img width="1896" alt="Screenshot 2025-02-21 at 11 37 11 PM" src="https://github.com/user-attachments/assets/63f301f9-2b77-42e3-b2cc-e1a3223b0972" />
 
-![Screenshot]()
+<img width="1897" alt="Screenshot 2025-02-21 at 11 37 31 PM" src="https://github.com/user-attachments/assets/7b67d05d-e75a-499f-9d50-ee33705b6cb6" />
 
-## Instructions
+<img width="1896" alt="Screenshot 2025-02-21 at 11 37 50 PM" src="https://github.com/user-attachments/assets/923b2f7c-7a0e-4238-8db9-56a74627a2fd" />
 
-1. Clone the repository:
+<img width="1904" alt="Screenshot 2025-02-21 at 11 41 11 PM" src="https://github.com/user-attachments/assets/091a7c9a-eacd-48f9-b03b-6f022034940c" />
 
-```
-git clone https://github.com/AdiPatel095/CineTracker.git
-```
 
-2. navigate to the project directory:
+## Deployed URL
 
-```
-cd cinetracker
-```
+[Click Here]() to view the live version of the app. 
 
-3. Install dependencies: 
+## License
 
-```
-npm install
-```
+This project is licensed under the MIT license.
 
-4. Set up a PostgreSQL database and configure the .env file.
-
-5. Run the application:
-  ```
-  npm run start:dev
-  ```
 
 ## Key Features
 
@@ -88,16 +88,23 @@ npm install
 
 * **Authentication:** JSON Web Tokens, bcrypt for password hashing
 
-* **API Integration:** TMDb & OMDb API for Movie and TV Show data
+* **API Integration:** TMDb API for Movie and TV Show data
 
 * **Hosting & Deployment:** Render Deployment
 
-## Additional Resources
+## Contributing
+If you want to contribute, feel free to fork the repository, create a feature branch, make your changes, and submit a pull request.
 
-GitHub Repository: [CineTracker](https://github.com/AdiPatel095/CineTracker)
+## The Software Developers
+Below are the software developers who built this app:
 
-Deployed Application: [Render Link]()
+Stanley Bertrand [GitHub](https://github.com/bertrandstanley)
 
-TMDb API Documentation: [TMDb API](https://developer.themoviedb.org/reference/intro/getting-started)
+Adi Patel [GitHub](https://github.com/AdiPatel095)
 
-OMDb API Documentation: [OMDb API](https://www.omdbapi.com/)
+Gilmer Perez [GitHub](https://github.com/gilmerperez)
+
+Freddy Laboy [GitHub](https://github.com/Fredbo561)
+
+## Questions
+For questions, reach out to me on [GitHub](https://github.com/bertrandstanley) or email me at bertrandstanley@gmail.com.
