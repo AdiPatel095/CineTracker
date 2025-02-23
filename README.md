@@ -105,6 +105,3 @@ Adi Patel [GitHub](https://github.com/AdiPatel095)
 Gilmer Perez [GitHub](https://github.com/gilmerperez)
 
 Freddy Laboy [GitHub](https://github.com/Fredbo561)
-
-## Questions
-For questions, reach out to me on [GitHub](https://github.com/bertrandstanley) or email me at bertrandstanley@gmail.com.
