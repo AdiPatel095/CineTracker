@@ -55,7 +55,7 @@ The following images show the web application's appearance and functionality:
 
 ## Deployed URL
 
-[Click Here]() to view the live version of the app. 
+[Click Here](https://cinetracker-vlws.onrender.com) to view the live version of the app. 
 
 ## License
 
