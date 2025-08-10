@@ -30,7 +30,7 @@ export const login = async (req: Request, res: Response) => {
     }
 
     // Get secret key from .env
-    const secretKey = process.env.JWT_SECRET_KEY || '';
+    const secretKey = process.env.JWT_SECRET_KEY || 'dev_jwt_secret';
     // Generate JWT token for the authenticated user
     const token = jwt.sign({ username }, secretKey, { expiresIn: '1d' });
 
@@ -48,14 +48,12 @@ export const signUp = async (req: Request, res: Response) => {
     // Extract username, email and password from request body
     const { username, email, password } = req.body;
 
-    // Hash the password before storing it
-    const hashedPassword = await bcrypt.hash(password, 10);
-
     // Create user in the database with provided details
-    const newUser = await User.create({ username, email, password: hashedPassword });
+    // Password hashing is handled by the User model hook
+    const newUser = await User.create({ username, email, password });
 
     // Get secret key from .env
-    const secretKey = process.env.JWT_SECRET_KEY || '';
+    const secretKey = process.env.JWT_SECRET_KEY || 'dev_jwt_secret';
     // Generate JWT token for the authenticated user
     const token = jwt.sign({ username: newUser.username }, secretKey, { expiresIn: '1d' });
 
