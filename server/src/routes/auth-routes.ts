@@ -30,7 +30,7 @@ export const login = async (req: Request, res: Response) => {
     }
 
     // Get secret key from .env
-    const secretKey = process.env.JWT_SECRET_KEY || '';
+    const secretKey = process.env.JWT_SECRET_KEY || 'dev_jwt_secret';
     // Generate JWT token for the authenticated user
     const token = jwt.sign({ username }, secretKey, { expiresIn: '1d' });
 
@@ -53,7 +53,7 @@ export const signUp = async (req: Request, res: Response) => {
     const newUser = await User.create({ username, email, password });
 
     // Get secret key from .env
-    const secretKey = process.env.JWT_SECRET_KEY || '';
+    const secretKey = process.env.JWT_SECRET_KEY || 'dev_jwt_secret';
     // Generate JWT token for the authenticated user
     const token = jwt.sign({ username: newUser.username }, secretKey, { expiresIn: '1d' });
 
