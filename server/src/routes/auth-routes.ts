@@ -48,11 +48,9 @@ export const signUp = async (req: Request, res: Response) => {
     // Extract username, email and password from request body
     const { username, email, password } = req.body;
 
-    // Hash the password before storing it
-    const hashedPassword = await bcrypt.hash(password, 10);
-
     // Create user in the database with provided details
-    const newUser = await User.create({ username, email, password: hashedPassword });
+    // Password hashing is handled by the User model hook
+    const newUser = await User.create({ username, email, password });
 
     // Get secret key from .env
     const secretKey = process.env.JWT_SECRET_KEY || '';
